@@ -40,9 +40,8 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
-      provider: true,
     });
-    history.push('/');
+    //history.push('/');
   } catch (err) {
     Alert.alert('Falha no cadastro','Houve um erro no cadastro, verifique seus dados!');
     yield put(signFailure());
@@ -61,7 +60,7 @@ export function setToken({ payload }) {
 }
 
 export function signOut() {
-  history.push('/');
+  //history.push('/');
 }
 
 export default all([
