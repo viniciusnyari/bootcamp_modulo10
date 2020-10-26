@@ -8,17 +8,19 @@ export function* signIn({ payload }) {
   try {
     const { email, password } = payload;
 
+    console.tron.log("Iniciando....");
+
     const response = yield call(api.post, 'sessions', {
       email,
       password,
     });
-
     const { token, user } = response.data;
 
     if (user.provider) {
       Alert.alert('Erro no login','Usuário não pode ser prestador de serviços'); 
       return;
     }
+    else Alert.alert('Sucesso','Login realizado com sucesso! ' + response.data.user.name);
 
     // Adiciona ao header da chamada api o token de autenticação
     api.defaults.headers.Authorization = `Bearer ${token}`;
