@@ -4,9 +4,17 @@ import { useSelector ,useDispatch} from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Background from '../../components/Background';
 
+import {signOut} from '../../store/modules/auth/actions';
 import {updateProfileRequest} from '../../store/modules/user/actions';
 
-import { Container, Title, Form, FormInput, SubmitButton, Separator } from './styles';
+import { Container, 
+  Title, 
+  Form, 
+  FormInput, 
+  SubmitButton, 
+  Separator,
+  LogoutButton } 
+  from './styles';
 
 const Profile = () => {
 
@@ -44,6 +52,10 @@ const Profile = () => {
       password,
       confirmPassword
     }));
+  }
+
+  function handleLogout(){
+    dispatch(signOut());
   }
 
   return <Background>
@@ -110,6 +122,7 @@ const Profile = () => {
             />
 
           <SubmitButton onPress={handleSubmit}>Atualizar Perfil</SubmitButton>
+          <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton>
       </Form>
     </Container>
   </Background>;
