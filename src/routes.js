@@ -1,12 +1,22 @@
 import 'react-native-gesture-handler';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
-export default createAppContainer(
+import Dashboard from './pages/Dashboard';
+
+export default (signedIn = false) => createAppContainer(
   createSwitchNavigator({
-    SignIn,
-    SignUp,
+    Sign: createSwitchNavigator({
+      SignIn,
+      SignUp,
+    }),  
+    App: createBottomTabNavigator({
+      Dashboard,
+    }),  
+  },{
+    initialRouteName: signedIn ? 'App' : 'Sign'
   })
 );
