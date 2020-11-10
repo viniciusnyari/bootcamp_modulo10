@@ -9,8 +9,8 @@ if( __DEV__){
   //const tron = Reactotron.setAsyncStorageHandler(AsyncStorage)
   const tron = Reactotron
    .configure({
-     host: '192.168.15.12', // my current wifi local ip in mac     
-     //host: '192.168.0.3',  // my current wifi local ip in mac
+     //host: '192.168.15.12', // my current wifi local ip in mac     
+     host: '192.168.0.2',  // my current wifi local ip in mac
      port: 9090,
    })
   //.configure()

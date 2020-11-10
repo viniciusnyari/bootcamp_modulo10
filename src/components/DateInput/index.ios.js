@@ -6,9 +6,9 @@ import pt from 'date-fns/locate/pt';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { Container } from './styles';
+import { Container, DateButton, DateText, Picker } from './styles';
 
-const DateInput = ({date}) => {
+const DateInput = ({date, onChange}) => {
 
   const [opened, setOpened] = useState(false);
 
@@ -25,11 +25,16 @@ const DateInput = ({date}) => {
       </DateButton>
 
       {opened && (
+        <Picker>
           <DatePickerIOS
             date={date}
             onDateChange={onChange}
             minimumDate={new Date()}
+            minuteInterval={60}
+            locale="pt"
+            mode="date"
           />
+        </Picker>
       )}
 
     </Container>
