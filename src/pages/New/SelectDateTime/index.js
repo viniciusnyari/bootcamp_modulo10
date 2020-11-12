@@ -13,6 +13,7 @@ export default function SelectDateTime({ navigation }) {
   const [date, setDate] = useState(new Date());
   const [hours, setHours] = useState([]);
 
+  //Busca o parâmetro da rota
   const provider = navigation.getParam('provider');
 
   useEffect(() => {
