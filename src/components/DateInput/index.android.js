@@ -3,7 +3,7 @@ import {DatePickerAndroid} from 'react-native';
 
 //Não está achando esse pacote...verficar
 import { format} from 'date-fns';
-import pt from 'date-fns/locate/pt';
+import pt from 'date-fns/locale/pt';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
