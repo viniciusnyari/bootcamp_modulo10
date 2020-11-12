@@ -1,7 +1,6 @@
 import React, {useMemo} from 'react';
 import {DatePickerAndroid} from 'react-native';
 
-//Não está achando esse pacote...verficar
 import { format} from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
